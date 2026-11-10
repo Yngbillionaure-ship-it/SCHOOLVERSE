@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d18">
+
+<title>SCHOOLVERSE</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #090d18;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    padding: 22px 18px;
+    background: linear-gradient(135deg,#172443,#101629);
+    border-bottom: 1px solid #35466b;
+}
+
+.logo {
+    color: #e9c878;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    color: #aab6ce;
+    font-size: 12px;
+    margin-top: 6px;
+    letter-spacing: 2px;
+}
+
+.player {
+    margin: 18px;
+    padding: 18px;
+    background: #151f35;
+    border: 1px solid #394969;
+    border-radius: 14px;
+}
+
+.player h3 {
+    color: #e9c878;
+    margin-bottom: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #bdc9dd;
+    gap: 8px;
+}
+
+h2 {
+    margin: 22px 18px 12px;
+    font-size: 19px;
+}
+
+.modes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 18px;
+}
+
+.card {
+    min-height: 125px;
+    padding: 17px 12px;
+    border-radius: 13px;
+    background: linear-gradient(145deg,#1c2c49,#111a2c);
+    border: 1px solid #394969;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+}
+
+.card:active {
+    transform: scale(.96);
+}
+
+.icon {
+    font-size: 29px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.card p {
+    color: #aab6ce;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.adventure {
+    margin: 22px 18px;
+    padding: 20px;
+    background: linear-gradient(135deg,#493a25,#1d2635);
+    border: 1px solid #a88b51;
+    border-radius: 14px;
+}
+
+.adventure h3 {
+    color: #f0d38d;
+    margin-bottom: 9px;
+}
+
+.adventure p {
+    color: #ddd3bb;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+button {
+    font-family: inherit;
+}
+
+.action {
+    margin-top: 15px;
+    padding: 11px 18px;
+    background: #d3ae60;
+    border: none;
+    border-radius: 7px;
+    color: #151515;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#screen {
+    display: none;
+    margin: 20px 18px;
+    padding: 22px;
+    background: #151f35;
+    border: 1px solid #53658a;
+    border-radius: 14px;
+    min-height: 150px;
+}
+
+#screen h2 {
+    margin: 0 0 15px;
+    color: #e9c878;
+}
+
+#screen p {
+    color: #c3cee0;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.back {
+    margin-top: 20px;
+    background: #394969;
+    color: white;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 7px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #65738d;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">SCHOOLVERSE</div>
+    <div class="subtitle">A WORLD BEYOND ORDINARY</div>
+</header>
+
+<div class="player">
+    <h3>⚔️ ADVENTURER</h3>
+    <div class="stats">
+        <span>LEVEL 1</span>
+        <span>EXP: 0</span>
+        <span>RANK: NOVICE</span>
+    </div>
+</div>
+
+<h2>Choose Your Path</h2>
+
+<div class="modes">
+
+    <button class="card" onclick="openMode('battle')">
+        <div class="icon">⚔️</div>
+        <h3>Battle Arena</h3>
+        <p>Challenge opponents and prove your strength.</p>
+    </button>
+
+    <button class="card" onclick="openMode('adventure')">
+        <div class="icon">🌍</div>
+        <h3>Main Adventure</h3>
+        <p>Explore kingdoms and discover your destiny.</p>
+    </button>
+
+    <button class="card" onclick="openMode('multiplayer')">
+        <div class="icon">👥</div>
+        <h3>Multiplayer</h3>
+        <p>Enter the world with other players.</p>
+    </button>
+
+    <button class="card" onclick="openMode('solo')">
+        <div class="icon">🎮</div>
+        <h3>Solo Challenge</h3>
+        <p>Play against the computer anytime.</p>
+    </button>
+
+    <button class="card" onclick="openMode('logic')">
+        <div class="icon">🧠</div>
+        <h3>Logic Games</h3>
+        <p>Test your intelligence and strategy.</p>
+    </button>
+
+    <button class="card" onclick="openMode('quiz')">
+        <div class="icon">📚</div>
+        <h3>Quick Quiz</h3>
+        <p>Challenge your knowledge.</p>
+    </button>
+
+</div>
+
+<div class="adventure">
+    <h3>✦ YOUR JOURNEY BEGINS ✦</h3>
+    <p>
+        Four kingdoms. Countless destinies.
+        Different origins, hidden abilities and
+        adventures waiting to unfold.
+    </p>
+    <button class="action" onclick="openMode('adventure')">
+        BEGIN JOURNEY →
+    </button>
+</div>
+
+<div id="screen">
+    <h2 id="screenTitle"></h2>
+    <p id="screenText"></p>
+    <button class="back" onclick="closeMode()">← BACK TO HOME</button>
+</div>
+
+<footer>
+    SCHOOLVERSE © 2026
+    <br><br>
+    YOUR STORY. YOUR DESTINY.
+</footer>
+
+<script>
+function openMode(mode) {
+
+    const titles = {
+        battle: "⚔️ BATTLE ARENA",
+        adventure: "🌍 MAIN ADVENTURE",
+        multiplayer: "👥 MULTIPLAYER",
+        solo: "🎮 SOLO CHALLENGE",
+        logic: "🧠 LOGIC GAMES",
+        quiz: "📚 QUICK QUIZ"
+    };
+
+    const descriptions = {
+        battle: "The Battle Arena awaits. Prepare to test your combat abilities. The battle system is coming next.",
+        adventure: "Your journey begins here. Discover your origin, encounter mysteries and explore the four kingdoms.",
+        multiplayer: "A world shared by many. Multiplayer features will allow adventurers to meet and compete.",
+        solo: "No internet? No problem. Your solo challenges will allow you to play against computer-controlled opponents.",
+        logic: "Think carefully. Solve puzzles, overcome challenges and sharpen your strategic mind.",
+        quiz: "Knowledge is power. Test yourself with questions across different subjects."
+    };
+
+    document.getElementById("screenTitle").innerText = titles[mode];
+    document.getElementById("screenText").innerText = descriptions[mode];
+
+    document.getElementById("screen").style.display = "block";
+
+    document.getElementById("screen").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function closeMode() {
+    document.getElementById("screen").style.display = "none";
+}
+</script>
+
+</body>
+</html>
